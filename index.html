@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgriConnect — Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <marquee direction="right" data-en="Offers are Available." data-hi="ऑफर उपलब्ध हैं।">
+        Offers are Available.
+    </marquee>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <h4>Language:</h4>
+            <select id="language-select" class="language-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+            </select>
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html">Fertilizers</a>
+                <a href="pesticides.html">Pesticides</a>
+                <a href="crops.html">Crops</a>
+                <a href="disease.html">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-left">
+                <h2 data-en="Digital access to quality inputs" data-hi="गुणवत्तापूर्ण इनपुट तक डिजिटल पहुंच">Digital
+                    access to quality inputs</h2>
+                <p class="lead"
+                    data-en="AgriConnect links farmers, licensed Krushi Kendras and certified industries — buy seeds, fertilizers and crops with transparency and government-backed support."
+                    data-hi="एग्रीकनेक्ट किसानों, लाइसेंस प्राप्त कृषि केंद्रों और प्रमाणित उद्योगों को जोड़ता है — बीज, उर्वरक और फसलें पारदर्शिता और सरकारी समर्थन के साथ खरीदें।">
+                    AgriConnect links farmers, licensed Krushi Kendras and certified industries — buy seeds, fertilizers
+                    and crops with transparency and government-backed support.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="fertilizers.html">Explore Fertilizers</a>
+                    <a class="btn" href="pesticides.html">Explore Pesticides</a>
+                    <a class="btn outline" href="crops.html">Visit Crops Store</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="farmfiled.jpg" alt="Farm field" />
+            </div>
+        </section>
+
+        <section class="features container">
+            <div class="feature">
+                <h3 data-en="Direct from companies" data-hi="कंपनियों से सीधे">Direct from companies</h3>
+                <p data-en="Purchase certified fertilizers and seeds directly from manufacturers."
+                    data-hi="प्रमाणित उर्वरक और बीज सीधे निर्माताओं से खरीदें।">Purchase certified fertilizers and seeds
+                    directly from manufacturers.</p>
+            </div>
+            <div class="feature">
+                <h3 data-en="Govt Subsidy Info" data-hi="सरकारी सब्सिडी जानकारी">Govt Subsidy Info</h3>
+                <p data-en="See subsidy details to buy inputs at reduced cost (info provided)."
+                    data-hi="कम लागत पर इनपुट खरीदने के लिए सब्सिडी विवरण देखें (जानकारी प्रदान की गई)।">See subsidy
+                    details to buy inputs at reduced cost (info provided).</p>
+            </div>
+            <div class="feature">
+                <h3 data-en="Licensed Krushi Kendras" data-hi="लाइसेंस प्राप्त कृषि केंद्र">Licensed Krushi Kendras</h3>
+                <p data-en="Find verified local Krushi Kendras for pickup / help."
+                    data-hi="पिकअप / मदद के लिए सत्यापित स्थानीय कृषि केंद्र खोजें।">Find verified local Krushi Kendras
+                    for pickup / help.</p>
+            </div>
+        </section>
+
+
+        <!-- New Product Listing Section -->
+        <section class="products container" aria-label="Products">
+            <h2>Featured Products</h2>
+            <div id="product-grid" class="grid grid-4" tabindex="0">
+                <!-- Products will be dynamically rendered here by JavaScript -->
+            </div>
+
+            <!-- New Product Listing Section -->
+            <template id="product-template">
+                <article class="card product" tabindex="0">
+                    <img class="product-img" src="" alt="" />
+                    <h3 class="product-title"></h3>
+                    <p class="product-meta"></p>
+                    <p class="price">₹0</p>
+                    <p class="net-price"></p>
+                    <div class="card-actions">
+                        <button class="btn-buy btn" type="button" aria-label="Buy product">Buy</button>
+                        <button class="btn-details btn outline" type="button" aria-label="View details">Details</button>
+                    </div>
+                </article>
+            </template>
+        </section>
+
+        <!-- Subsidy Estimator Section -->
+        <section class="subsidy-estimator container" aria-label="Subsidy Estimator">
+            <h2 data-en="Estimate Subsidy" data-hi="सब्सिडी का अनुमान लगाएं">Estimate Subsidy</h2>
+            <form id="subsidy-form" aria-describedby="subsidy-instructions">
+                <div id="subsidy-instructions" data-en="Select product category and your state to estimate subsidy."
+                    data-hi="सब्सिडी का अनुमान लगाने के लिए उत्पाद श्रेणी और अपनी राज्य चुनें।">Select product category
+                    and your state to estimate subsidy.</div>
+                <label for="prod-type" data-en="Product Type:" data-hi="उत्पाद प्रकार:">Product Type:</label>
+                <select id="prod-type" name="prod-type" required>
+                    <option value="seeds" selected>Seeds</option>
+                    <option value="fertiliser">Fertilizer</option>
+                    <option value="pesticide">Pesticide</option>
+                </select>
+
+                <label for="state" data-en="State:" data-hi="राज्य:">State:</label>
+                <select id="state" name="state" required>
+                    <option value="maharashtra" selected>Maharashtra</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="uttarpradesh">Uttar Pradesh</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                </select>
+                <button class="btn" type="submit" data-en="Estimate" data-hi="अनुमान">Estimate</button>
+            </form>
+            <div id="subsidy-result" aria-live="polite" class="subsidy-result-container"></div>
+        </section>
+    </main>
+
+    <!-- Product Details Modal -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImg" src="" alt="" />
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+                <p class="price" id="modalPrice"></p>
+                <button class="btn" onclick="buyItem()">Buy</button>
+                <button class="btn cart-btn" style="margin-left: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect - Agricultural Marketplace</p>
+        </div>
+    </footer>
+</body>
+
+</html>

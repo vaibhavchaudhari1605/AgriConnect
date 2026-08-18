@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriConnect — Account</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html">Fertilizers</a>
+                <a href="pesticides.html">Pesticides</a>
+                <a href="crops.html">Crops</a>
+                <a href="disease.html">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="farmer-details-section" style="margin-top: 2rem;">
+            <h2>Farmer Details</h2>
+            <form id="farmer-details-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="farmerImage">Farmer Image:</label><br />
+                    <input type="file" id="farmerImage" name="farmerImage" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label><br />
+                    <input type="text" id="name" name="name" />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label><br />
+                    <select id="gender" name="gender">
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label><br />
+                    <input type="date" id="dob" name="dob" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label><br />
+                    <input type="email" id="email" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No.:</label><br />
+                    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" />
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label><br />
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="aadharCardNo">Aadhar Card No.:</label><br />
+                    <input type="text" id="aadharCardNo" name="aadharCardNo" />
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-save">Save Details</button>
+                    <button type="button" class="btn-edit" id="edit-btn">Edit Details</button>
+                </div>
+            </form>
+            <div id="farmer-details-display" style="margin-top: 1rem;">
+                <!-- Display saved farmer details here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgriConnect — Diseases</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional styles for disease section */
+        .selection-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .selection-box {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        .selection-box label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #2a5d34;
+        }
+
+        .selection-box select {
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1.8px solid #2a5d34;
+            background-color: #e7f0e7;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .selection-box select:hover,
+        .selection-box select:focus {
+            border-color: #1e3c1a;
+            outline: none;
+        }
+
+        button#getRecBtn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2a5d34;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 8px;
+        }
+
+        button#getRecBtn:hover {
+            background-color: #1e3c1a;
+        }
+
+        .page-head p {
+            font-size: 1.1rem;
+            color: #385d37;
+            margin-bottom: 10px;
+        }
+
+        section#recommendationResults {
+            margin-top: 25px;
+        }
+
+        /* Headings for Results */
+        section#recommendationResults h3 {
+            color: #2a5d34;
+            font-weight: 700;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #2a5d34;
+            padding-bottom: 5px;
+        }
+
+        .additional-info-container {
+            margin-top: 20px;
+        }
+
+        .info-box {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html">Fertilizers</a>
+                <a href="pesticides.html">Pesticides</a>
+                <a href="crops.html">Crops</a>
+                <a href="disease.html" class="active">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-head">
+            <h2>AI Bot Fertilizer & Pesticide Recommendation</h2>
+            <p>Select the disease name and crop name below to get recommendations:</p>
+
+            <div class="selection-container">
+                <div class="selection-box">
+                    <label for="diseaseSelect">Disease Name</label>
+                    <select id="diseaseSelect" aria-label="Select Disease Name">
+                        <option value="">-- Select Disease --</option>
+                        <option value="blight">Blight</option>
+                        <option value="aphids">Aphids</option>
+                        <option value="caterpillar">Caterpillar</option>
+                        <option value="rust">Rust</option>
+                        <option value="powdery mildew">Powdery Mildew</option>
+                    </select>
+                </div>
+                <div class="selection-box">
+                    <label for="cropSelect">Crop Name</label>
+                    <select id="cropSelect" aria-label="Select Crop Name">
+                        <option value="">-- Select Crop --</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="rice">Rice</option>
+                        <option value="maize">Maize</option>
+                        <option value="soybean">Soybean</option>
+                        <option value="sugarcane">Sugarcane</option>
+                    </select>
+                </div>
+                <div class="selection-box">
+                    <label for="soilSelect">Soil Type</label>
+                    <select id="soilSelect" aria-label="Select Soil Type">
+                        <option value="">-- Select Soil --</option>
+                        <option value="sandy">Sandy</option>
+                        <option value="clay">Clay</option>
+                        <option value="loam">Loam</option>
+                    </select>
+                </div>
+                <div class="selection-box">
+                    <label for="weatherSelect">Weather Pattern</label>
+                    <select id="weatherSelect" aria-label="Select Weather Pattern">
+                        <option value="">-- Select Weather --</option>
+                        <option value="rainy">Rainy</option>
+                        <option value="dry">Dry</option>
+                        <option value="sunny">Sunny</option>
+                    </select>
+                </div>
+                <div class="selection-box">
+                    <label for="locationSelect">Location (State)</label>
+                    <select id="locationSelect" aria-label="Select Location">
+                        <option value="">-- Select State --</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="uttarpradesh">Uttar Pradesh</option>
+                        <option value="tamilnadu">Tamil Nadu</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="getRecBtn" onclick="getRecommendations()">Get Recommendations</button>
+        </section>
+
+        <section id="recommendationResults">
+            <div id="recommendedFertilizers" class="grid grid-4"></div>
+            <div id="recommendedPesticides" class="grid grid-4"></div>
+            <div id="additionalInfo" class="additional-info-container">
+                <div id="aiAdvice" class="info-box"></div>
+                <div id="subsidyInfo" class="info-box"></div>
+                <div id="krushiKendra" class="info-box"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Details Modal -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImg" src="" alt="" />
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+                <p class="price" id="modalPrice"></p>
+                <button class="btn" onclick="buyItem()">Buy</button>
+                <button class="btn cart-btn" style="margin-left: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect</p>
+        </div>
+    </footer>
+</body>
+
+</html>

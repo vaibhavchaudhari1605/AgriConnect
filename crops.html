@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgriConnect — Crops Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html">Fertilizers</a>
+                <a href="pesticides.html">Pesticides</a>
+                <a href="crops.html" class="active">Crops</a>
+                <a href="disease.html">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-head">
+            <h2>Crops Store</h2>
+            <div class="tools">
+                <input id="cropSearch" type="search" placeholder="Search crops..." oninput="filterProducts('crop')" />
+            </div>
+        </section>
+
+        <section id="cropGrid" class="grid grid-3">
+            <article class="card product" data-name="Wheat" data-price="45" data-img="images\wheat.jpg"
+                data-desc="Staple food grain.">
+                <img src="images\wheat.jpg" alt="Wheat">
+                <h3>Wheat</h3>
+                <p class="price">₹45 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <article class="card product" data-name="Rice" data-price="60" data-img="images\rice.avif"
+                data-desc="High-yield rice varieties available.">
+                <img src="images\rice.avif" alt="Rice">
+                <h3>Rice</h3>
+                <p class="price">₹60 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <article class="card product" data-name="Maize" data-price="35" data-img="images\maize.jpg"
+                data-desc="Maize for feed and food.">
+                <img src="images\maize.jpg" alt="Maize">
+                <h3>Maize</h3>
+                <p class="price">₹35 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <article class="card product" data-name="Sugarcane" data-price="70" data-img="images\sugarcane.webp"
+                data-desc="Cash crop for sugar production.">
+                <img src="images\sugarcane.webp" alt="Sugarcane">
+                <h3>Sugarcane</h3>
+                <p class="price">₹70 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <article class="card product" data-name="Cotton" data-price="120" data-img="images\cotton.webp"
+                data-desc="High-quality cotton bales.">
+                <img src="images\cotton.webp" alt="Cotton">
+                <h3>Cotton</h3>
+                <p class="price">₹120 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <article class="card product" data-name="Soybean" data-price="90" data-img="images\soyabeen.jpg"
+                data-desc="High-protein soybean seeds.">
+                <img src="images\soyabeen.jpg" alt="Soybean">
+                <h3>Soybean</h3>
+                <p class="price">₹90 / Kg</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect</p>
+        </div>
+    </footer>
+
+    <!-- DETAILS MODAL (reused) -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImg" src="" alt="" />
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+                <p class="price" id="modalPrice"></p>
+                <button class="btn" onclick="buyItem()">Buy</button>
+                <button class="btn cart-btn" style="margin-left: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgriConnect — Pesticides</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html">Fertilizers</a>
+                <a href="pesticides.html" class="active">Pesticides</a>
+                <a href="crops.html">Crops</a>
+                <a href="disease.html">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-head">
+            <h2>Pesticides Store</h2>
+            <div class="tools">
+                <input id="pestSearch" type="search" placeholder="Search pesticides..."
+                    oninput="filterProducts('pest')" />
+                <select id="pestSort" onchange="sortProducts('pest')">
+                    <option value="default">Sort: Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="fertGrid" class="grid grid-4">
+            <!-- Each product includes data attributes for modal -->
+            <!-- 1 -->
+            <article class="card product" data-name="Coragen Insecticide" data-price="129"
+                data-img="images\Coragen Insectiside.webp" data-desc="Chlorantraniliprole 18.5% SC by FMC.">
+                <img src="images\Coragen Insectiside.webp""
+                    alt=" Coragen Insecticide">
+                <h3>Coragen Insecticide</h3>
+                <p class="price">₹129 / 10 ml</p>
+                <div class="card-actions">
+                    <button onclick="openDetails(event)">View Details</button>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card product" data-name="EBS Ventricillium Lecanii" data-price="540"
+                data-img="images\EBS Ventricillium.webp" data-desc="Verticillium Lecanii 2.0% AS.">
+                <img src="images\EBS Ventricillium.webp" alt="EBS Ventricillium Lecanii">
+                <h3>EBS Ventricillium Lecanii</h3>
+                <p class="price">₹540 / 1 ltr</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card product" data-name="EM-1 Insecticide" data-price="215"
+                data-img="images\EM-1 Insecticide.webp"
+                data-desc="(Emamectin Benzoate 5% SG) for Caterpillars other pests.">
+                <img src="images\EM-1 Insecticide.webp" alt="EM-1 Insecticide">
+                <h3>EM-1 Insecticide</h3>
+                <p class="price">₹215 / 100 gms</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card product" data-name="Confidor Insecticide" data-price="427"
+                data-img="images\Confidor Insecticide.webp" data-desc="Imidacloprid 17.8% SL.">
+                <img src="images\Confidor Insecticide.webp" alt="Confidor Insecticide">
+                <h3>Confidor Insecticide</h3>
+                <p class="price">₹427 / 200 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card product" data-name="Amistar Top Fungicide" data-price="565"
+                data-img="images\Amistar Top Fungicide.webp"
+                data-desc="Azoxystrobin 18.2% + Difenoconazole 11.4% w/w SC.">
+                <img src="images\Amistar Top Fungicide.webp" alt="Amistar Top Fungicide">
+                <h3>Amistar Top Fungicide</h3>
+                <p class="price">₹565 / 100 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card product" data-name="Solomon Insecticide" data-price="330"
+                data-img="images\Solomon Insecticide.webp"
+                data-desc="(Beta-Cyfluthrin 8.49% + Imidacloprid 19.81% OD) - Broad Spectrum Insecticide.">
+                <img src="images\Solomon Insecticide.webp" alt="Solomon Insecticide">
+                <h3>Solomon Insecticide</h3>
+                <p class="price">₹330 / 100 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 7 -->
+            <article class="card product" data-name="Rogor Insecticide" data-price="119"
+                data-img="images\Rogor Insecticide.webp"
+                data-desc="Dimethoate 30% EC for pests, aphids, thrips, mites and scale insects.">
+                <img src="images\Rogor Insecticide.webp" alt="Rogor Insecticide">
+                <h3>Rogor Insecticide</h3>
+                <p class="price">₹119 / 100 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 8 -->
+            <article class="card product" data-name="Dhanpreet Insecticide" data-price="143"
+                data-img="images\Dhanpreet Insecticide.jpg" data-desc="Control Aphids, Whiteflies, Thrips & Jassids.">
+                <img src="images\Dhanpreet Insecticide.jpg" alt="Dhanpreet Insecticide">
+                <h3>Dhanpreet Insecticide</h3>
+                <p class="price">₹143 / 100 gms</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 9 -->
+            <article class="card product" data-name="Fame Insecticide" data-price="229"
+                data-img="images\Fame Insecticide.webp" data-desc="Flubendiamide 480SC for Lepidoptera Pest Control.">
+                <img src="images\Fame Insecticide.webp" alt="Fame Insecticide">
+                <h3>Fame Insecticide</h3>
+                <p class="price">₹229 / 10 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 10 -->
+            <article class="card product" data-name="Alanto Insecticide" data-price="437"
+                data-img="images\Alanto Insecticide.webp" data-desc="-Thiacloprid 21.70% SC for Pest Control.">
+                <img src="images\Alanto Insecticide.webp" alt="Alanto Insecticide">
+                <h3>Alanto Insecticide</h3>
+                <p class="price">₹437 / 100 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 11 -->
+            <article class="card product" data-name="Curacron Insecticide" data-price="122"
+                data-img="images\Curacron Insecticide.webp" data-desc=" Profenofos 50% EC Broad-Spectrum Pest Control.">
+                <img src="images\Curacron Insecticide.webp" alt="Curacron Insecticide">
+                <h3>Curacron Insecticide</h3>
+                <p class="price">₹122 / 100 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 12 -->
+            <article class="card product" data-name="Shinwa Insecticide" data-price="420"
+                data-img="images\Shinwa Insecticide.webp" data-desc="Fluxametamide 10% EC for Broad Pest Control.">
+                <img src="images\Shinwa Insecticide.webp" alt="Shinwa Insecticide">
+                <h3>Shinwa Insecticide</h3>
+                <p class="price">₹698 / 40 ml</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect</p>
+        </div>
+    </footer>
+
+    <!-- DETAILS MODAL (shared with JS) -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImg" src="" alt="" />
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+                <p class="price" id="modalPrice"></p>
+                <button class="btn" onclick="buyItem()">Buy</button>
+                <button class="btn cart-btn" style="margin-left: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

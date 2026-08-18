@@ -1,0 +1,683 @@
+/* Reset & base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6fff6;
+    color: #233;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header / Nav */
+.site-header {
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    color: #fff;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.main-nav a.active {
+    text-decoration: underline;
+}
+
+.main-nav a:hover {
+    opacity: 1;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-right img {
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.lead {
+    color: #234;
+    margin-top: 8px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px solid #2e7d32;
+    color: #2e7d32;
+}
+
+.cta-row .btn+.btn {
+    margin-left: 12px;
+}
+
+/* Features */
+.features {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.feature {
+    flex: 1;
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Page Head */
+.page-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 0;
+}
+
+.tools {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Inputs & selects */
+input[type="search"],
+select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #cfd;
+}
+
+/* Grid layout helpers */
+.grid {
+    display: grid;
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform .18s ease, background .18s;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 12px 0 6px;
+    font-size: 1.05rem;
+}
+
+.card p {
+    margin: 6px 0;
+    color: #444;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* Price & actions */
+.price {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.card-actions {
+    margin-top: 10px;
+}
+
+.card-actions button {
+    background: #ffd54f;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    padding: 20px;
+}
+
+.modal[aria-hidden="false"] {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    width: min(900px, 96%);
+    border-radius: 12px;
+    display: flex;
+    gap: 18px;
+    padding: 18px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.modal-content img {
+    width: 40%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.modal-body {
+    flex: 1;
+    text-align: left;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-buy {
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-buy:hover {
+    background: #1b5e20;
+}
+
+.btn-add-cart {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-add-cart:hover {
+    background: #e68900;
+}
+
+/* New colorful login popup style */
+.colorful-login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #66bb6a, #a5d6a7);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    width: 320px;
+    color: #1b5e20;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.colorful-login-popup h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px #388e3c;
+}
+
+.colorful-login-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.colorful-login-popup label {
+    font-weight: 600;
+}
+
+.colorful-login-popup input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 2px solid #2e7d32;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.colorful-login-popup input[type="text"]:focus {
+    border-color: #81c784;
+    box-shadow: 0 0 6px #81c784;
+}
+
+.colorful-login-popup button[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.colorful-login-popup button[type="submit"]:hover {
+    background-color: #1b5e20;
+}
+
+/* Close button style for popup */
+.popup-close-btn {
+    display: block;
+    width: 100%;
+    background-color: #a5d6a7;
+    color: #1b5e20;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.popup-close-btn:hover {
+    background-color: #81c784;
+}
+
+
+/* Footer */
+.site-footer {
+    background: #2e7d32;
+    color: #fff;
+    padding: 14px 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-right img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        order: -1;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .modal-content img {
+        width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.farmer-details-section {
+    background: linear-gradient(135deg, #a5d6a7, #66bb6a);
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+    color: #1b3c17;
+    margin-top: 2rem;
+}
+
+.farmer-details-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #234d20;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px #4caf50;
+}
+
+.farmer-details-section form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 3rem;
+}
+
+.farmer-details-section .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.farmer-details-section label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #2e7d32;
+}
+
+.farmer-details-section input[type="text"],
+.farmer-details-section input[type="email"],
+.farmer-details-section input[type="tel"],
+.farmer-details-section input[type="date"],
+.farmer-details-section select,
+.farmer-details-section textarea,
+.farmer-details-section input[type="file"] {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #4caf50;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.farmer-details-section input[type="text"]:focus,
+.farmer-details-section input[type="email"]:focus,
+.farmer-details-section input[type="tel"]:focus,
+.farmer-details-section input[type="date"]:focus,
+.farmer-details-section select:focus,
+.farmer-details-section textarea:focus,
+.farmer-details-section input[type="file"]:focus {
+    border-color: #81c784;
+    box-shadow: 0 0 8px #81c784;
+}
+
+.farmer-details-section textarea {
+    resize: vertical;
+    min-height: 4.5rem;
+}
+
+.farmer-details-section .button-group {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn-save,
+.btn-edit {
+    cursor: pointer;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+}
+
+.btn-save {
+    background-color: #2e7d32;
+}
+
+.btn-save:hover {
+    background-color: #1b5e20;
+}
+
+.btn-edit {
+    background-color: #81c784;
+    color: #1b3c17;
+}
+
+.btn-edit:hover {
+    background-color: #519657;
+    color: white;
+}
+
+/* Farmer details display styles */
+#farmer-details-display {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Container for the farmer image */
+.farmer-image-container {
+    flex: 0 0 180px;
+    max-width: 180px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(46, 125, 50, 0.3);
+    border: 3px solid #4caf50;
+}
+
+.farmer-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* Responsive for smaller screens */
+@media (max-width: 720px) {
+    .farmer-details-section form {
+        grid-template-columns: 1fr;
+    }
+
+    #farmer-details-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .farmer-details-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+
+
+
+/* Subsidy Estimator Styles */
+.subsidy-estimator {
+    background: #e8f4e8;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(114, 145, 67, 0.15);
+}
+
+.subsidy-estimator h2 {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.subsidy-estimator form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.subsidy-estimator label {
+    flex: 0 0 100%;
+    font-weight: 600;
+    color: #386b22;
+}
+
+.subsidy-estimator select,
+.subsidy-estimator button {
+    flex: 1 1 140px;
+    padding: 10px 14px;
+    border: 1px solid #9ccc6d;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.subsidy-estimator select:focus,
+.subsidy-estimator button:hover {
+    border-color: #519657;
+    outline: none;
+}
+
+.subsidy-estimator button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+}
+
+#subsidy-result {
+    margin-top: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #315a11;
+    min-height: 2rem;
+}
+
+/* Additional info containers for AI advice, subsidy, Krushi Kendra */
+.additional-info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-box {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #2e7d32;
+}

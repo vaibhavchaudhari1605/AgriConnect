@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AgriConnect — Fertilizers</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">🌾 AgriConnect</h1>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="fertilizers.html" class="active">Fertilizers</a>
+                <a href="pesticides.html">Pesticides</a>
+                <a href="crops.html">Crops</a>
+                <a href="disease.html">AI Assist</a>
+                <a href="krushikendra.html">Krushi Kendra</a>
+                <a href="account.html">Account</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-head">
+            <h2>Fertilizers Store</h2>
+            <div class="tools">
+                <input id="fertSearch" type="search" placeholder="Search fertilizers..."
+                    oninput="filterProducts('fert')" />
+                <select id="fertSort" onchange="sortProducts('fert')">
+                    <option value="default">Sort: Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="fertGrid" class="grid grid-4">
+            <!-- Each product includes data attributes for modal -->
+            <!-- 1 -->
+            <article class="card product" data-name="Urea" data-price="450" data-img="images\urea.png"
+                data-desc="High nitrogen fertilizer for heavy feeders.">
+                <img src="images\urea.png" alt="Urea">
+                <h3>Urea</h3>
+                <p class="price">₹450 / Bag</p>
+                <div class="card-actions">
+                    <button onclick="openDetails(event)">View Details</button>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card product" data-name="Ammonium Sulphate" data-price="520"
+                data-img="images\ammoniumsulphate.jpg" data-desc="Balanced sulphur source.">
+                <img src="images\ammoniumsulphate.jpg" alt="Ammonium Sulphate">
+                <h3>Ammonium Sulphate</h3>
+                <p class="price">₹520 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card product" data-name="NPK 20-20-20" data-price="600" data-img="images\npk.webp"
+                data-desc="Complete NPK blend for balanced nutrition.">
+                <img src="images\npk.webp" alt="NPK">
+                <h3>NPK 24-24-0</h3>
+                <p class="price">₹600 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card product" data-name="Super Phosphate" data-price="480"
+                data-img="images\superphosphate.png" data-desc="Good phosphorus source for root development.">
+                <img src="images\superphosphate.png" alt="Super Phosphate">
+                <h3>Super Phosphate</h3>
+                <p class="price">₹480 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card product" data-name="Potash" data-price="550" data-img="images\potash.avif"
+                data-desc="Potassium source for fruit quality and stress tolerance.">
+                <img src="images\potash.avif" alt="Potash">
+                <h3>Potash</h3>
+                <p class="price">₹550 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card product" data-name="Zinc Sulphate" data-price="490"
+                data-img="images\zinc-sulphate.jpeg" data-desc="Micronutrient supplement for deficiency correction.">
+                <img src="images\zinc-sulphate.jpeg" alt="Zinc Sulphate">
+                <h3>Zinc Sulphate</h3>
+                <p class="price">₹490 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 7 -->
+            <article class="card product" data-name="Borax" data-price="510" data-img="images\borax.jpg"
+                data-desc="Boron source for flowering and fruit set.">
+                <img src="images\borax.jpg" alt="Borax">
+                <h3>Borax</h3>
+                <p class="price">₹510 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 8 -->
+            <article class="card product" data-name="Calcium Nitrate" data-price="590"
+                data-img="images\calciumnitrate.jpg" data-desc="Calcium and nitrogen for quality growth.">
+                <img src="images\calciumnitrate.jpg">
+                <h3>Calcium Nitrate</h3>
+                <p class="price">₹590 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 9 -->
+            <article class="card product" data-name="Bio Fertilizer" data-price="400"
+                data-img="images\biofertilizer.jpg" data-desc="Eco-friendly biofertilizer to improve soil microbes.">
+                <img src="images\biofertilizer.jpg" alt="Bio Fertilizer">
+                <h3>Bio Fertilizer</h3>
+                <p class="price">₹400 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 10 -->
+            <article class="card product" data-name="Organic Compost" data-price="350" data-img="images\orgcompost.jpg"
+                data-desc="Rich organic compost to improve soil structure.">
+                <img src="images\orgcompost.jpg" alt="Organic Compost">
+                <h3>Organic Compost</h3>
+                <p class="price">₹350 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 11 -->
+            <article class="card product" data-name="Neem Cake" data-price="300" data-img="images\neemcake.webp"
+                data-desc="Natural pest deterrent and fertilizer.">
+                <img src="images\neemcake.webp" alt="Neem Cake">
+                <h3>Neem Cake</h3>
+                <p class="price">₹300 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+
+            <!-- 12 -->
+            <article class="card product" data-name="Gypsum" data-price="420" data-img="images\gypsum.jpg"
+                data-desc="Improves soil structure and reduces sodium.">
+                <img src="images\gypsum.jpg" alt="Gypsum">
+                <h3>Gypsum</h3>
+                <p class="price">₹420 / Bag</p>
+                <div class="card-actions"><button onclick="openDetails(event)">View Details</button></div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 AgriConnect</p>
+        </div>
+    </footer>
+
+    <!-- DETAILS MODAL (shared with JS) -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImg" src="" alt="" />
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+                <p id="modalDesc"></p>
+                <p class="price" id="modalPrice"></p>
+                <button class="btn" onclick="buyItem()">Buy</button>
+                <button class="btn cart-btn" style="margin-left: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
